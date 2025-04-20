@@ -1,8 +1,7 @@
-
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { ArrowRight, Download, Archive, Search, BarChart, FileText, Users } from 'lucide-react';
-import LayoutComponent from '@/components/Layout';
+import Layout from '@/components/Layout';
 
 const Index = () => {
   useEffect(() => {
@@ -14,7 +13,7 @@ const Index = () => {
   }, []);
 
   return (
-    <LayoutComponent>
+    <Layout>
       {/* Hero Section */}
       <section className="pt-28 pb-20 bg-gradient-to-b from-blue-50 to-white">
         <div className="container-custom">
@@ -37,22 +36,12 @@ const Index = () => {
               </div>
             </div>
             <div className="w-full md:w-1/2 animate-fade-in animate-delay-200">
-              <div className="relative">
-                <div className="aspect-square rounded-full bg-gradient-to-br from-blue-400 to-seo-accent p-1 max-w-md mx-auto">
-                  <div className="h-full w-full rounded-full bg-white flex items-center justify-center overflow-hidden">
-                    <img
-                      src="/lovable-uploads/624e90e1-83ad-47e1-90a5-12db9a20acdb.png"
-                      alt="Anuj - SEO Specialist"
-                      className="object-cover w-full h-full opacity-80"
-                    />
-                    <div className="absolute inset-0 rounded-full flex items-center justify-center">
-                      <div className="text-center bg-white/90 p-6 rounded-xl shadow-lg">
-                        <h2 className="font-bold text-2xl mb-1">Anuj</h2>
-                        <p className="text-seo-accent font-medium">SEO Specialist</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div className="max-w-md mx-auto">
+                <img
+                  src="/lovable-uploads/624e90e1-83ad-47e1-90a5-12db9a20acdb.png"
+                  alt="Anuj - SEO Specialist"
+                  className="w-full h-full object-cover rounded-full"
+                />
               </div>
             </div>
           </div>
@@ -252,7 +241,7 @@ const Index = () => {
           </div>
         </div>
       </section>
-    </LayoutComponent>
+    </Layout>
   );
 };
 
