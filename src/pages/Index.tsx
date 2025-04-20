@@ -14,15 +14,20 @@ const Index = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="pt-28 pb-20 bg-gradient-to-b from-blue-50 to-white">
+      <div className="motion-background">
+        <div className="motion-blob motion-blob-1"></div>
+        <div className="motion-blob motion-blob-2"></div>
+        <div className="motion-blob motion-blob-3"></div>
+        <div className="motion-blob motion-blob-4"></div>
+      </div>
+      <section className="pt-28 pb-20 relative bg-gradient-to-b from-[#ffdee2] to-[#fff2f3]">
         <div className="container-custom">
           <div className="flex flex-col md:flex-row items-center">
             <div className="w-full md:w-1/2 mb-10 md:mb-0 animate-fade-in">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-                Elevating Your <span className="text-seo-accent">SEO</span> Strategy
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 text-seo-accent">
+                Elevating Your <span className="text-seo-orange">SEO</span> Strategy
               </h1>
-              <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-xl">
+              <p className="text-lg md:text-xl text-seo-gray mb-8 max-w-xl">
                 Hi, I'm Anuj - an SEO Specialist based in India with expertise in technical, on-page, and off-page SEO strategies that drive real business results.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -35,12 +40,13 @@ const Index = () => {
                 </Link>
               </div>
             </div>
-            <div className="w-full md:w-1/2 animate-fade-in animate-delay-200">
+            <div className="w-full md:w-1/2 animate-fade-in animate-delay-200 flex items-center justify-center">
               <div className="max-w-md mx-auto">
                 <img
-                  src="/lovable-uploads/624e90e1-83ad-47e1-90a5-12db9a20acdb.png"
+                  src="/lovable-uploads/{USER_IMAGE_FILENAME}"
                   alt="Anuj - SEO Specialist"
-                  className="w-full h-full object-cover rounded-full"
+                  className="w-full h-full object-cover rounded-full shadow-lg border-4 border-seo-accent"
+                  style={{ background: '#ffdee2' }}
                 />
               </div>
             </div>
@@ -48,7 +54,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Section */}
       <section className="section-padding">
         <div className="container-custom">
           <div className="text-center mb-16 animate-fade-in">
@@ -95,7 +100,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured Case Studies */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-16 animate-fade-in">
@@ -155,7 +159,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Recent Blog Posts */}
       <section className="section-padding">
         <div className="container-custom">
           <div className="text-center mb-16 animate-fade-in">
@@ -225,7 +228,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-16 bg-seo-dark">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
