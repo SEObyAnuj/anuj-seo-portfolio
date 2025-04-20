@@ -7,33 +7,33 @@
 
 @layer base {
   :root {
-    --background: 0 100% 97%; /* Light, pinkish */
-    --foreground: 0 0% 18%;
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 15%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 11%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 350 82% 59%; /* Red accent */
-    --primary-foreground: 0 0% 98%;
+    --primary: 223 78% 44%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 22 97% 85%; /* Light peach */
-    --secondary-foreground: 0 0% 20%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 350 12% 50%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 13 96% 72%; /* Orange accent for warmth */
-    --accent-foreground: 0 0% 98%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
-    --destructive: 0 72% 32%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 350 34% 90%;
-    --input: 350 34% 90%;
-    --ring: 0 82% 60%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222 78% 44%;
 
     --radius: 0.5rem;
   }
@@ -52,94 +52,32 @@
   }
 }
 
-/* ========== MOTION GRAPHICS ANIMATED BACKGROUND ========== */
-.motion-background {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-  width: 100vw;
-  height: 100%;
-  min-height: 700px;
-  background: radial-gradient(ellipse at 20% 40%, #ffdee2 60%, #fff0 100%), 
-              radial-gradient(ellipse at 80% 35%, #ea384c40 50%, #fff0 90%);
-}
+@layer components {
+  .container-custom {
+    @apply container max-w-7xl mx-auto px-4 md:px-6;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .btn-primary {
+    @apply bg-seo-accent text-white font-medium px-6 py-3 rounded-md hover:bg-blue-600 transition-colors;
+  }
 
-/* Animated floating circles for background motion */
-.motion-blob {
-  position: absolute;
-  opacity: 0.4;
-  border-radius: 50%;
-  mix-blend-mode: lighten;
-}
-.motion-blob-1 {
-  width: 270px;
-  height: 270px;
-  background: linear-gradient(135deg, #ea384c 75%, #ffdee2 100%);
-  left: 3%;
-  top: 15%;
-  animation: float 9s ease-in-out infinite;
-}
-.motion-blob-2 {
-  width: 150px;
-  height: 150px;
-  background: linear-gradient(120deg, #F97316 60%, #ffdee2 100%);
-  left: 26%;
-  top: 48%;
-  animation: float 11s ease-in-out infinite;
-  animation-delay: 0.5s;
-}
-.motion-blob-3 {
-  width: 220px;
-  height: 220px;
-  background: linear-gradient(100deg, #ea384c 60%, #fff 100%);
-  right: 8%;
-  top: 10%;
-  animation: float 13s ease-in-out infinite;
-}
-.motion-blob-4 {
-  width: 160px;
-  height: 160px;
-  background: linear-gradient(120deg, #9A6B68 60%, #ffe2e8 100%);
-  right: 25%;
-  top: 65%;
-  animation: float 15s ease-in-out infinite;
-  animation-delay: 2s;
-}
+  .btn-outline {
+    @apply border-2 border-seo-accent text-seo-accent font-medium px-6 py-[10px] rounded-md hover:bg-seo-accent hover:text-white transition-colors;
+  }
 
-/* Section backgrounds */
-.section-padding {
-  @apply py-16 md:py-24;
-}
-
-.container-custom {
-  @apply container max-w-7xl mx-auto px-4 md:px-6;
-}
-
-.btn-primary {
-  @apply bg-seo-accent text-white font-medium px-6 py-3 rounded-md hover:bg-primary transition-colors;
-}
-
-.btn-outline {
-  @apply border-2 border-seo-accent text-seo-accent font-medium px-6 py-[10px] rounded-md hover:bg-seo-accent hover:text-white transition-colors;
-}
-
-.animate-delay-200 {
-  animation-delay: 200ms;
-}
-
-.animate-delay-400 {
-  animation-delay: 400ms;
-}
-
-.animate-delay-600 {
-  animation-delay: 600ms;
-}
-
-/* Fade/Float keyframes for blobs */
-@keyframes float {
-  0% { transform: translateY(0px);}
-  50% { transform: translateY(-38px);}
-  100% { transform: translateY(0px);}
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animate-delay-600 {
+    animation-delay: 600ms;
+  }
 }
