@@ -1,8 +1,8 @@
-
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, FileText, Globe, Users, BarChart2, Sliders, Activity, Star, Target, Layers, Database, Layout } from 'lucide-react';
-import Layout from '@/components/Layout';
+import { Search, FileText, Globe, Users, BarChart2, Sliders, Activity, Star, Target, Layers, Database } from 'lucide-react';
+import { Award } from 'lucide-react';
+import LayoutComponent from '@/components/Layout';
 
 const Skills = () => {
   useEffect(() => {
@@ -47,7 +47,7 @@ const Skills = () => {
     },
     {
       name: "Content Strategy",
-      icon: <Layout size={40} className="text-seo-accent mb-3" />,
+      icon: <FileText size={40} className="text-seo-accent mb-3" />,
       description: "Content gap analysis, topic clusters, content calendars, SEO copywriting, and content optimization."
     },
     {
@@ -122,7 +122,7 @@ const Skills = () => {
   ];
 
   return (
-    <Layout>
+    <LayoutComponent>
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-to-b from-blue-50 to-white">
         <div className="container-custom">
@@ -354,7 +354,7 @@ const Skills = () => {
           </div>
         </div>
       </section>
-    </Layout>
+    </LayoutComponent>
   );
 };
 

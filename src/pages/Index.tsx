@@ -1,8 +1,7 @@
-
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
-import { ArrowRight, Download, Archive, Search, BarChart, Layout, FileText, Users } from 'lucide-react';
-import Layout from '@/components/Layout';
+import { ArrowRight, Download, Archive, Search, BarChart, FileText, Users } from 'lucide-react';
+import LayoutComponent from '@/components/Layout';
 
 const Index = () => {
   useEffect(() => {
@@ -14,7 +13,7 @@ const Index = () => {
   }, []);
 
   return (
-    <Layout>
+    <LayoutComponent>
       {/* Hero Section */}
       <section className="pt-28 pb-20 bg-gradient-to-b from-blue-50 to-white">
         <div className="container-custom">
@@ -252,7 +251,7 @@ const Index = () => {
           </div>
         </div>
       </section>
-    </Layout>
+    </LayoutComponent>
   );
 };
 
