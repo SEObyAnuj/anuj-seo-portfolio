@@ -1,6 +1,7 @@
+
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
-import { ArrowRight, Download, Archive, Search, BarChart, FileText, Users } from 'lucide-react';
+import { ArrowRight, Download, Search, BarChart, FileText, Users } from 'lucide-react';
 import Layout from '@/components/Layout';
 
 const Index = () => {
@@ -15,17 +16,17 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="pt-28 pb-20 bg-gradient-to-b from-blue-50 to-white">
+      <section className="pt-28 pb-20 bg-gradient-to-b from-secondary/50 to-background">
         <div className="container-custom">
           <div className="flex flex-col md:flex-row items-center">
-            <div className="w-full md:w-1/2 mb-10 md:mb-0 animate-fade-in">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+            <div className="w-full md:w-1/2 mb-10 md:mb-0">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 animate-fade-in">
                 Elevating Your <span className="text-seo-accent">SEO</span> Strategy
               </h1>
-              <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-xl">
+              <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-xl animate-fade-in animate-delay-200">
                 Hi, I'm Anuj - an SEO Specialist based in India with expertise in technical, on-page, and off-page SEO strategies that drive real business results.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 animate-fade-in animate-delay-400">
                 <a href="/anuj-resume.pdf" className="btn-primary flex items-center justify-center">
                   <Download size={18} className="mr-2" />
                   Download Resume
@@ -36,7 +37,7 @@ const Index = () => {
               </div>
             </div>
             <div className="w-full md:w-1/2 animate-fade-in animate-delay-200">
-              <div className="max-w-md mx-auto">
+              <div className="max-w-md mx-auto transform hover:scale-105 transition-transform duration-300">
                 <img
                   src="/lovable-uploads/624e90e1-83ad-47e1-90a5-12db9a20acdb.png"
                   alt="Anuj - SEO Specialist"
@@ -228,7 +229,7 @@ const Index = () => {
       {/* CTA Section */}
       <section className="py-16 bg-seo-dark">
         <div className="container-custom">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-3xl mx-auto text-center animate-fade-in">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Ready to Boost Your Search Rankings?
             </h2>
