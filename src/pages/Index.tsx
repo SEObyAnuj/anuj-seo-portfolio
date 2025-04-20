@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { ArrowRight, Download, Archive, Search, BarChart, FileText, Users } from 'lucide-react';
@@ -40,8 +41,8 @@ const Index = () => {
                 <div className="aspect-square rounded-full bg-gradient-to-br from-blue-400 to-seo-accent p-1 max-w-md mx-auto">
                   <div className="h-full w-full rounded-full bg-white flex items-center justify-center overflow-hidden">
                     <img
-                      src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
-                      alt="SEO Visualization"
+                      src="/lovable-uploads/624e90e1-83ad-47e1-90a5-12db9a20acdb.png"
+                      alt="Anuj - SEO Specialist"
                       className="object-cover w-full h-full opacity-80"
                     />
                     <div className="absolute inset-0 rounded-full flex items-center justify-center">
