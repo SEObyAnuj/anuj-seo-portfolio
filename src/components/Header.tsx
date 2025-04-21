@@ -10,8 +10,9 @@ const Header = () => {
 
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Case Studies', href: '/case-studies' },
+    { name: 'About Us', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'Projects', href: '/projects' },
     { name: 'Skills & Tools', href: '/skills' },
     { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' },
@@ -43,12 +44,12 @@ const Header = () => {
       <div className="container-custom py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="text-2xl font-bold text-seo-dark flex items-center">
-            <span className="text-seo-accent">A</span>nuj
-            <span className="text-sm font-normal ml-2 text-seo-gray hidden sm:inline-block">SEO Specialist</span>
+            <span className="text-seo-accent">A</span>R Team
+            <span className="text-sm font-normal ml-2 text-seo-gray hidden sm:inline-block">Web & SEO Experts</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6">
             {navigation.map((item) => (
               <Link
                 key={item.name}
