@@ -1,6 +1,6 @@
 
 import { useEffect } from 'react';
-import { CheckCircle, Code, Search, BarChart, Layout, Globe, FileText, Database, Users } from 'lucide-react';
+import { CheckCircle, Code, Search, BarChart, LayoutIcon, Globe, FileText, Database, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 
@@ -37,7 +37,7 @@ const Services = () => {
       ]
     },
     {
-      icon: <Layout className="h-12 w-12 text-seo-accent" />,
+      icon: <LayoutIcon className="h-12 w-12 text-seo-accent" />,
       title: 'Custom Dashboards',
       description: 'User-friendly admin panels and dashboards built with AdminLTE to help you manage your business operations efficiently.',
       features: [
@@ -86,7 +86,7 @@ const Services = () => {
     {
       icon: <Users className="h-12 w-12 text-seo-accent" />,
       title: 'Off-page SEO',
-      description: 'Building your site's authority through quality link building, brand mentions, and digital PR strategies.',
+      description: 'Building your site\'s authority through quality link building, brand mentions, and digital PR strategies.',
       features: [
         'Link building campaigns',
         'Brand mention acquisition',

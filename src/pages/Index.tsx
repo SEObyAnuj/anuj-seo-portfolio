@@ -1,7 +1,6 @@
-
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
-import { ArrowRight, Download, Search, BarChart, FileText, Users, Code, Globe, Database, Layout } from 'lucide-react';
+import { ArrowRight, Download, Search, BarChart, FileText, Users, Code, Globe, Database, LayoutIcon } from 'lucide-react';
 import Layout from '@/components/Layout';
 
 const Index = () => {
@@ -105,7 +104,7 @@ const Index = () => {
                 description: "Technical SEO audits, on-page optimization, content strategy, and off-page SEO to boost your rankings."
               },
               {
-                icon: <Layout className="h-10 w-10 text-seo-accent" />,
+                icon: <LayoutIcon className="h-10 w-10 text-seo-accent" />,
                 title: "Custom Dashboards",
                 description: "User-friendly admin panels and dashboards built with AdminLTE to efficiently manage your business."
               },
@@ -261,7 +260,7 @@ const Index = () => {
                   { name: "PHP", icon: <Code className="h-8 w-8 text-seo-accent mb-2" /> },
                   { name: "MySQL", icon: <Database className="h-8 w-8 text-seo-accent mb-2" /> },
                   { name: "Laravel", icon: <Code className="h-8 w-8 text-seo-accent mb-2" /> },
-                  { name: "Bootstrap", icon: <Layout className="h-8 w-8 text-seo-accent mb-2" /> },
+                  { name: "Bootstrap", icon: <LayoutIcon className="h-8 w-8 text-seo-accent mb-2" /> },
                 ].map((skill) => (
                   <div key={skill.name} className="bg-white p-4 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
                     {skill.icon}
