@@ -13,7 +13,7 @@ const Blog = () => {
     {
       id: 'fix-crawling-issues-wordpress',
       title: 'How to Fix Common Crawling Issues in WordPress',
-      excerpt: 'Discover practical solutions to common WordPress crawling problems that may be affecting your site's SEO performance. Learn how to identify and solve crawl issues.',
+      excerpt: 'Discover practical solutions to common WordPress crawling problems that may be affecting your site\'s SEO performance. Learn how to identify and solve crawl issues.',
       content: (
         <>
           <p>WordPress powers over 40% of all websites on the internet, making it one of the most popular content management systems worldwide. However, its popularity doesn't make it immune to SEO challenges, particularly when it comes to crawling issues.</p>
