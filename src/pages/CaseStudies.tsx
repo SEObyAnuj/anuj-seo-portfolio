@@ -1,268 +1,261 @@
 
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, TrendingUp, Users, Search, ShieldCheck, Globe } from 'lucide-react';
+import { useParams } from 'react-router-dom';
 import Layout from '@/components/Layout';
+import CaseStudyCard from './components/CaseStudies/CaseStudyCard';
+import CaseStudyDetails from './components/CaseStudies/CaseStudyDetails';
 
 const CaseStudies = () => {
-  useEffect(() => {
-    document.title = 'Anuj - SEO Specialist | Case Studies';
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.setAttribute('content', 'Explore Anuj\'s SEO case studies showcasing real client success stories with measurable results in organic traffic growth, keyword rankings, and technical optimizations.');
-    }
-  }, []);
+  const { id } = useParams<{ id: string }>();
   
-  const caseStudies = [
+  const caseStudiesData = [
     {
-      id: "ecommerce",
-      title: "E-commerce Traffic Growth Strategy",
-      subtitle: "Fashion E-commerce Store",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
-      challenge: "A fashion e-commerce store was struggling with low organic traffic, poor keyword rankings, and technical SEO issues affecting their product pages.",
-      approach: [
-        "Conducted a comprehensive technical SEO audit",
-        "Optimized product category structure and URL hierarchy",
-        "Implemented structured data for products and reviews",
-        "Created an internal linking strategy focused on key product categories",
-        "Developed a content strategy targeting high-intent keywords"
-      ],
-      tools: ["Ahrefs", "Screaming Frog", "Google Search Console", "Google Analytics 4"],
+      id: 'xgrepair',
+      title: 'Local SEO Success',
+      client: 'xgrepair.com',
+      website: 'https://xgrepair.com',
+      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158',
+      challenge: 'Improve online visibility and drive traffic for a local cell phone repair service.',
+      strategy: 'Focused on local SEO, optimizing the Google My Business listing, targeting geo-specific keywords for "cell phone repair in Katy" and "repair services near me."',
+      tools: ['Google My Business', 'Ahrefs', 'SEMrush', 'Screaming Frog', 'Grammarly'],
       results: [
-        "230% increase in organic traffic within 6 months",
-        "First page rankings for 65+ commercial keywords",
-        "38% increase in organic conversions",
-        "Fixed 100+ technical SEO issues"
-      ],
-      chartData: {
-        before: 12000,
-        after: 39600
-      }
+        'Increased local search visibility by 40%',
+        'Improved Google Maps ranking from position #8 to #3',
+        'Boosted organic traffic by 35% in 3 months',
+        'Increased phone calls through GMB by 28%'
+      ]
     },
     {
-      id: "local-medical",
-      title: "Local SEO for Medical Practice",
-      subtitle: "Multispecialty Clinic",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-      challenge: "A multispecialty medical clinic needed to improve their local search visibility to attract more patients in their service area.",
-      approach: [
-        "Optimized Google Business Profile with accurate NAP information",
-        "Created location-specific landing pages for each service",
-        "Built local citations across healthcare directories",
-        "Implemented review generation strategy",
-        "Fixed mobile usability issues affecting local search"
-      ],
-      tools: ["Google Business Profile", "SEMrush", "BrightLocal", "Google Analytics 4", "PageSpeed Insights"],
+      id: 'oneticktechnologies',
+      title: 'Course Visibility Enhancement',
+      client: 'oneticktechnologies.com',
+      website: 'https://oneticktechnologies.com',
+      image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7',
+      challenge: 'Attract more traffic to the course offering website and improve rankings for digital marketing course-related keywords.',
+      strategy: 'Performed on-page SEO, optimized course content with relevant keywords, and focused on backlink building to improve domain authority.',
+      tools: ['SEMrush', 'Google Search Console', 'Grammarly', 'Canva'],
       results: [
-        "95% increase in 'near me' search visibility",
-        "Doubled appointment bookings from organic search",
-        "Improved from position #12 to #2 for primary target keywords",
-        "Increased review count from 23 to 87 with 4.7 average rating"
-      ],
-      chartData: {
-        before: 42,
-        after: 87
-      }
+        'Boosted organic traffic by 45%',
+        'Improved keyword rankings for 22 target terms',
+        'Increased course inquiries by 30%',
+        'Reduced bounce rate by 15%'
+      ]
     },
     {
-      id: "tech-blog",
-      title: "Content Strategy for Tech Blog",
-      subtitle: "Technology News Website",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
-      challenge: "A technology news website was producing quality content but struggling to gain organic visibility and competing with established publishers.",
-      approach: [
-        "Performed content gap analysis against competitors",
-        "Developed a topic cluster strategy around core technology themes",
-        "Optimized existing content based on search intent",
-        "Implemented advanced schema markup for articles",
-        "Built a strategic internal linking structure"
-      ],
-      tools: ["SurferSEO", "Ahrefs", "Google Search Console", "ContentKing"],
+      id: 'onetickcdc',
+      title: 'Technical SEO Improvements',
+      client: 'onetickcdc.com',
+      website: 'https://onetickcdc.com',
+      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085',
+      challenge: 'Increase the online presence of a course provider offering digital marketing and other educational courses.',
+      strategy: 'Focused on technical SEO improvements, ensuring the site was mobile-friendly, fixing crawl issues, and optimizing page speed. Implemented on-page SEO for course-related keywords.',
+      tools: ['SEMrush', 'Google Search Console', 'Screaming Frog', 'Canva'],
       results: [
-        "176% increase in organic traffic over 9 months",
-        "Improved average session duration by 42%",
-        "3.5x increase in featured snippet placements",
-        "Grew email subscriber base through organic traffic by 210%"
-      ],
-      chartData: {
-        before: 25000,
-        after: 69000
-      }
+        'Improved website performance score from 65 to 92',
+        'Boosted organic traffic by 35%',
+        'Reduced page load time by 40%',
+        'Fixed 87 technical SEO issues'
+      ]
     },
     {
-      id: "saas-website",
-      title: "Technical SEO for SaaS Website",
-      subtitle: "Project Management Software",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-      challenge: "A SaaS company specializing in project management software was experiencing indexing issues, slow load times, and poor core web vitals metrics.",
-      approach: [
-        "Performed comprehensive technical audit and fixed critical issues",
-        "Optimized JavaScript rendering for search engines",
-        "Improved site architecture and internal linking",
-        "Enhanced core web vitals through code and image optimization",
-        "Implemented proper canonical tags and hreflang for international pages"
-      ],
-      tools: ["Screaming Frog", "PageSpeed Insights", "Google Search Console", "WebPageTest"],
+      id: 'weldarcindia',
+      title: 'Industrial Keyword Optimization',
+      client: 'weldarcindia.com',
+      website: 'https://weldarcindia.com',
+      image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1',
+      challenge: 'Increase visibility for a specialized manufacturer of fiber laser cutting machines.',
+      strategy: 'Implemented on-page SEO for industrial and manufacturing keywords, optimized content for product categories, and conducted competitor analysis to identify backlink opportunities.',
+      tools: ['Ahrefs', 'SEMrush', 'Screaming Frog', 'QuillBot'],
       results: [
-        "Improved mobile page speed score from 48 to 89",
-        "Increased indexed pages by 134%",
-        "Reduced bounce rate by 28%",
-        "Improved keyword rankings by an average of 14 positions"
-      ],
-      chartData: {
-        before: 48,
-        after: 89
-      }
+        'Improved rankings for key industrial keywords',
+        'Increased organic traffic by 30%',
+        'Generated 15 high-quality backlinks',
+        'Improved bounce rate from 65% to 48%'
+      ]
+    },
+    {
+      id: 'serviceapartments',
+      title: 'Location-Based SEO',
+      client: 'serviceapartmentsindelhi.com',
+      website: 'https://serviceapartmentsindelhi.com',
+      image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af',
+      challenge: 'Improve the online presence of service apartments in Delhi and target the right customers searching for rental properties.',
+      strategy: 'Focused on local SEO, optimized the website for location-based keywords such as "service apartments in Delhi" and created content to target potential clients.',
+      tools: ['Google My Business', 'Ahrefs', 'Google Search Console', 'Canva'],
+      results: [
+        'Increased local search rankings',
+        'Higher number of bookings through organic search',
+        'Improved visibility for 15+ location-specific keywords',
+        '35% increase in website inquiries'
+      ]
+    },
+    {
+      id: 'techspirals',
+      title: 'Course SEO Strategy',
+      client: 'techspirals.com',
+      website: 'https://techspirals.com',
+      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3',
+      challenge: 'Attract more students to an SAP training institute and improve rankings for course-related keywords.',
+      strategy: 'Implemented on-page SEO for course-specific keywords, enhanced content with internal linking, and optimized meta tags and descriptions for better search visibility.',
+      tools: ['SEMrush', 'Google Analytics', 'Screaming Frog', 'Grammarly'],
+      results: [
+        'Increased course-related search traffic',
+        'Improved rankings for SAP-related terms',
+        '40% increase in course enrollments',
+        '25% reduction in PPC spend due to organic growth'
+      ]
+    },
+    {
+      id: 'taxmother',
+      title: 'Tax Service Visibility Boost',
+      client: 'taxmother.com',
+      website: 'https://taxmother.com',
+      image: 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f',
+      challenge: 'Low organic traffic and visibility for a tax consultancy website.',
+      strategy: 'Performed on-page SEO optimization for tax-related keywords, improved content strategy, and conducted backlink building to increase domain authority.',
+      tools: ['SEMrush', 'Google Search Console', 'QuillBot'],
+      results: [
+        'Improved keyword rankings for tax services',
+        'Increased organic traffic by 40%',
+        '22% growth in client inquiries',
+        'Domain authority improvement from 15 to 28'
+      ]
+    },
+    {
+      id: 'arawebtechnologies',
+      title: 'IT Services SEO',
+      client: 'arawebtechnologies.com',
+      website: 'https://arawebtechnologies.com',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f',
+      challenge: 'Poor online presence for a web development and IT services company.',
+      strategy: 'Focused on on-page SEO and backlinking, optimizing technical aspects such as meta tags, descriptions, and keywords, as well as improving internal linking.',
+      tools: ['SEMrush', 'Screaming Frog', 'Grammarly'],
+      results: [
+        'Improved organic traffic by 25%',
+        'Achieved better rankings for technology-related terms',
+        'Reduced bounce rate from 70% to 55%',
+        'Increased page session duration by 28%'
+      ]
+    },
+    {
+      id: 'parentlifecoach',
+      title: 'Coaching Service Optimization',
+      client: 'theparentlifecoach.com',
+      website: 'https://theparentlifecoach.com',
+      image: 'https://images.unsplash.com/photo-1591951425300-149d37a3ed52',
+      challenge: 'Attract more clients to a parenting coaching business and increase visibility in search.',
+      strategy: 'Focused on content optimization for parenting-related keywords, optimized blog posts, and improved meta tags and headings.',
+      tools: ['Google Analytics', 'Ahrefs', 'Grammarly'],
+      results: [
+        'Increased organic traffic to blog posts',
+        'Generated new leads for the coaching service',
+        'Improved keyword rankings for 12 target keywords',
+        'Achieved 35% more newsletter signups'
+      ]
+    },
+    {
+      id: 'mistersustainable',
+      title: 'Eco-Friendly Brand Growth',
+      client: 'mistersustainable.com',
+      website: 'https://mistersustainable.com',
+      image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09',
+      challenge: 'Low online presence for an eco-friendly lifestyle brand.',
+      strategy: 'Implemented content optimization for eco-friendly keywords, improved website structure, and built backlinks from related green lifestyle websites.',
+      tools: ['SEMrush', 'Ahrefs', 'Google Search Console', 'Canva'],
+      results: [
+        'Increased search rankings for eco-friendly keywords',
+        'Boosted traffic to the website by 32%',
+        'Improved average time on page by 40%',
+        'Generated 18 quality backlinks from relevant sites'
+      ]
     }
   ];
 
+  useEffect(() => {
+    if (id) {
+      const caseStudy = caseStudiesData.find(cs => cs.id === id);
+      document.title = caseStudy 
+        ? `${caseStudy.client} - ${caseStudy.title} | Anuj SEO Case Study`
+        : 'Case Study Not Found | Anuj SEO';
+      
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc && caseStudy) {
+        metaDesc.setAttribute('content', `See how I helped ${caseStudy.client} ${caseStudy.challenge.toLowerCase()} Learn about the strategy, tools, and results achieved.`);
+      }
+    } else {
+      document.title = 'SEO Case Studies | Anuj - SEO Specialist';
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) {
+        metaDesc.setAttribute('content', 'Explore Anuj\'s SEO case studies showcasing real results for clients across various industries. See how strategic SEO can improve visibility and drive growth.');
+      }
+    }
+  }, [id]);
+
+  // Find the case study if an ID is provided
+  const selectedCaseStudy = id ? caseStudiesData.find(cs => cs.id === id) : null;
+
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-blue-50 to-white">
-        <div className="container-custom">
-          <div className="text-center max-w-3xl mx-auto animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Case Studies</h1>
-            <p className="text-xl text-gray-600">
-              Real-world examples of how my SEO strategies have helped businesses improve their online visibility and drive measurable results.
-            </p>
+      {selectedCaseStudy ? (
+        <section className="pt-32 pb-20">
+          <div className="container-custom">
+            <CaseStudyDetails caseStudy={selectedCaseStudy} />
           </div>
-        </div>
-      </section>
-
-      {/* Case Studies List */}
-      <section className="py-16">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 gap-16">
-            {caseStudies.map((study, index) => (
-              <div key={study.id} className="animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
-                <div className="bg-white rounded-xl overflow-hidden shadow-lg">
-                  <div className="flex flex-col lg:flex-row">
-                    <div className="w-full lg:w-5/12 flex-shrink-0">
-                      <div className="h-full">
-                        <img 
-                          src={study.image} 
-                          alt={study.title} 
-                          className="w-full h-full object-cover aspect-video lg:aspect-auto"
-                        />
-                      </div>
-                    </div>
-                    <div className="w-full lg:w-7/12 p-6 lg:p-8">
-                      <div className="mb-1 text-seo-accent font-medium">{study.subtitle}</div>
-                      <h2 className="text-2xl lg:text-3xl font-bold mb-4">{study.title}</h2>
-                      
-                      <div className="mb-6">
-                        <h3 className="font-semibold text-lg mb-2 flex items-center">
-                          <ShieldCheck size={18} className="mr-2 text-seo-accent" />
-                          The Challenge
-                        </h3>
-                        <p className="text-gray-700">{study.challenge}</p>
-                      </div>
-                      
-                      <div className="mb-6">
-                        <h3 className="font-semibold text-lg mb-2 flex items-center">
-                          <Search size={18} className="mr-2 text-seo-accent" />
-                          My Approach
-                        </h3>
-                        <ul className="space-y-1 text-gray-700">
-                          {study.approach.slice(0, 3).map((item, idx) => (
-                            <li key={idx} className="flex items-start">
-                              <span className="text-seo-accent mr-2">•</span>
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      
-                      <div className="mb-6">
-                        <h3 className="font-semibold text-lg mb-2 flex items-center">
-                          <TrendingUp size={18} className="mr-2 text-seo-accent" />
-                          Key Results
-                        </h3>
-                        <ul className="space-y-1 text-gray-700">
-                          {study.results.slice(0, 2).map((item, idx) => (
-                            <li key={idx} className="flex items-start">
-                              <span className="text-seo-accent mr-2">•</span>
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      
-                      <Link 
-                        to={`/case-studies/${study.id}`}
-                        className="inline-flex items-center text-seo-accent font-medium hover:underline"
-                      >
-                        View Full Case Study
-                        <ArrowRight size={16} className="ml-1" />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
+        </section>
+      ) : (
+        <>
+          {/* Header Section */}
+          <section className="pt-32 pb-16 bg-gradient-to-b from-blue-50 to-white">
+            <div className="container-custom">
+              <div className="text-center max-w-3xl mx-auto animate-fade-in">
+                <h1 className="text-4xl md:text-5xl font-bold mb-6">SEO Case Studies</h1>
+                <p className="text-xl text-gray-600">
+                  Real results for real clients - explore how my SEO strategies helped businesses improve their online visibility
+                </p>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+            </div>
+          </section>
 
-      {/* Why Choose Me */}
-      <section className="py-16 bg-gray-50">
-        <div className="container-custom">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose Me for Your SEO?</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              My approach to SEO is based on proven methodologies and tailored to your specific business needs
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {[
-              {
-                icon: <Globe size={32} className="text-seo-accent" />,
-                title: "Data-Driven Approach",
-                description: "I base all my strategies on thorough analysis and hard data to ensure measurable results and ROI for your business."
-              },
-              {
-                icon: <Users size={32} className="text-seo-accent" />,
-                title: "Transparent Reporting",
-                description: "Regular detailed reports that clearly show the impact of SEO efforts on your business metrics and bottom line."
-              },
-              {
-                icon: <TrendingUp size={32} className="text-seo-accent" />,
-                title: "Continuous Optimization",
-                description: "SEO is an ongoing process. I continuously monitor, test, and refine strategies to maintain and improve results."
-              }
-            ].map((feature, index) => (
-              <div 
-                key={index}
-                className="bg-white p-6 rounded-lg shadow-md animate-fade-in"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+          {/* Case Studies Grid */}
+          <section className="py-16">
+            <div className="container-custom">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {caseStudiesData.map((caseStudy, index) => (
+                  <CaseStudyCard
+                    key={caseStudy.id}
+                    id={caseStudy.id}
+                    title={caseStudy.title}
+                    client={caseStudy.client}
+                    image={caseStudy.image}
+                    challenge={caseStudy.challenge}
+                    results={caseStudy.results.slice(0, 2)}
+                    tools={caseStudy.tools}
+                    delay={index * 100}
+                  />
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+            </div>
+          </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-seo-dark">
-        <div className="container-custom">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Achieve Similar Results for Your Business?
-            </h2>
-            <p className="text-gray-300 mb-8 text-lg">
-              Let's discuss how my proven SEO strategies can help you grow your online presence and drive more organic traffic.
-            </p>
-            <Link to="/contact" className="btn-primary">
-              Let's Talk About Your Project
-            </Link>
-          </div>
-        </div>
-      </section>
+          {/* CTA Section */}
+          <section className="py-16 bg-gray-50">
+            <div className="container-custom">
+              <div className="max-w-3xl mx-auto text-center">
+                <h2 className="text-2xl md:text-3xl font-bold mb-6">Ready to Be My Next Success Story?</h2>
+                <p className="text-gray-600 mb-8">
+                  Let's work together to improve your website's search visibility and drive more organic traffic to your business.
+                </p>
+                <Link 
+                  to="/contact" 
+                  className="btn-primary inline-flex items-center"
+                >
+                  Get Started Today
+                </Link>
+              </div>
+            </div>
+          </section>
+        </>
+      )}
     </Layout>
   );
 };
